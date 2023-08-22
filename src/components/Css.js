@@ -27,8 +27,8 @@ export default function Css(props) {
                     lineWrapping: true,
                     lint: true,
                     mode: language,
+                    theme: 'material',
                     lineNumbers: true,
-                    theme: 'material'
                 }
             }
             />

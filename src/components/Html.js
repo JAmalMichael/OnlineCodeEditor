@@ -27,8 +27,8 @@ export default function Html(props) {
                     lineWrapping: true,
                     lint: true,
                     mode: language,
-                    lineNumbers: true,
-                    theme: 'material'
+                    theme: 'material',
+                    lineNumbers: true,  
                 }
             }
             />
