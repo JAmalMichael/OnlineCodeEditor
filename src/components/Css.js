@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css'
 import 'codemirror/mode/css/css'
 import { Controlled as ControlledEditor } from 'react-codemirror2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCompressAlt, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Css(props) {
     const {
@@ -12,11 +14,18 @@ export default function Css(props) {
     function handleChange(editor, data, value) {
         onChange(value)
     }
+
+    const [open, setOpen] = useState('')
     return (
         <div className='editor-container'> 
             <div className='editor-title'>
                 {displayName}
-                <button>O/C</button>
+                <button 
+                type='button'
+                className='expand-collapse-button'
+                onClick={() => setOpen(prevOpen => !prevOpen)}>
+                   <FontAwesomeIcon icone = {open ? faCompressAlt : faExpandAlt}/>
+                </button>
             </div>
             <ControlledEditor 
             onBeforeChange={handleChange}

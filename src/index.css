@@ -44,3 +44,20 @@ body {
     border-bottom-left-radius: .5rem;
     overflow: hidden;
 }
+
+.editor-container .collapsed {
+    flex-grow: 0;
+}
+
+.editor-container .collapsed .CodeMirror-scroll {
+    position: absolute;
+    overflow: hidden !important;
+}
+
+.expand-collapse-button {
+    margin-left: .5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

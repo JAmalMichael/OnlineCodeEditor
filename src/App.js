@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Html from './components/Html';
 import Css from './components/Css';
 import Javascript from './components/Javascript';
+import uselocalstorage from './components/hooks/uselocalstorage';
 
 function App() {
-const [html,setHtml] = useState('')
-const [css,setCss] = useState('')
-const [js,setJs] = useState('')
+const [html,setHtml] = uselocalstorage('html', '')
+const [css,setCss] = uselocalstorage('css', '')
+const [js,setJs] = uselocalstorage('js', '')
 const [srcDoc, setSrcDoc] = useState('')
 
 useEffect(() => {
