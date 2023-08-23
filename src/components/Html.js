@@ -11,20 +11,20 @@ export default function Html(props) {
         language, displayName, value, onChange
     } = props
 
-
-    const [open, setOpen] = useState('')
     function handleChange(editor, data, value) {
         onChange(value)
     }
+
+    const [open, setOpen] = useState(true)
     return (
-    <div className={`editor-container ${open ? "" : "collapsed"}`}> 
+        <div className={`editor-container ${open ? '' : 'collapsed'}`}> 
             <div className='editor-title'>
                 {displayName}
                 <button 
                 type='button'
                 className='expand-collapse-button'
                 onClick={() => setOpen(prevOpen => !prevOpen)}>
-                   <FontAwesomeIcon icone = {open ? faCompressAlt : faExpandAlt}/>
+                   <FontAwesomeIcon icon = {open ? faCompressAlt : faExpandAlt}/>
                 </button>
             </div>
             <ControlledEditor 
@@ -36,8 +36,8 @@ export default function Html(props) {
                     lineWrapping: true,
                     lint: true,
                     mode: language,
-                    theme: 'material',
-                    lineNumbers: true
+                    lineNumbers: true,
+                    theme: 'material'
                 }
             }
             />

@@ -15,16 +15,16 @@ export default function Javascript(props) {
         onChange(value)
     }
 
-    const [open, setOpen] = useState('')
+    const [open, setOpen] = useState(true)
     return (
-        <div className='editor-container'> 
+        <div className={`editor-container ${open ? '' : 'collapsed'}`}> 
             <div className='editor-title'>
                 {displayName}
                 <button 
                 type='button'
                 className='expand-collapse-button'
                 onClick={() => setOpen(prevOpen => !prevOpen)}>
-                   <FontAwesomeIcon icone = {open ? faCompressAlt : faExpandAlt}/>
+                   <FontAwesomeIcon icon = {open ? faCompressAlt : faExpandAlt}/>
                 </button>
             </div>
             <ControlledEditor 

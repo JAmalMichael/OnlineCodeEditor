@@ -20,7 +20,7 @@ useEffect(() => {
       </html>
       `
     )
-  }, 500)
+  }, 250)
 
   return () => clearTimeout(timeout)
 }, [html, css, js])
@@ -44,7 +44,7 @@ useEffect(() => {
         />
         <Javascript 
          language = 'javascript' 
-         displayName="JAVASCRIPT" 
+         displayName="JS" 
          value={js} 
          onChange={setJs} 
         />
